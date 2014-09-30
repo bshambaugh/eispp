@@ -1,4 +1,4 @@
 eispp
 =====
 
-Enterprise Information System for Networked Production
+Enterprise Information System for Peer Production
