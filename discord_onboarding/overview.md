@@ -1,4 +1,5 @@
 bshambaugh — 02/22/2024 2:18 PM
+[EISPP_SDD_Brent_Shambaugh.pdf](https://github.com/bshambaugh/eispp/blob/master/discord_onboarding/EISPP_SDD_Brent_Shambaugh.pdf) 
 ![EISPP_SDD_Brent_Shambaugh_1st_page_edit.png](EISPP_SDD_Brent_Shambaugh_1st_page_edit.png)
 (1st page)
 Brief Description by @gabriel_export
@@ -36,7 +37,10 @@ https://www.sensorica.co/
 bshambaugh — 03/28/2024 8:40 PM
 Applications sent to Causal Islands Toronto 2023:
 
-The_Semantic_Web
+[The_Semantic_Web_and_Web3_for_Local_First_and_Actor-Centric_Commons-based_Peer_Production.pdf
+](https://github.com/bshambaugh/eispp/blob/master/discord_onboarding/The_Semantic_Web_and_Web3_for_Local_First_and_Actor-Centric_Commons-based_Peer_Production.pdf)
+[Nature_Inspired_Swarm_Intelligence_for_Computing_with_Distribution_in_Space_and_Time.pdf
+](https://github.com/bshambaugh/eispp/blob/master/discord_onboarding/Nature_Inspired_Swarm_Intelligence_for_Computing_with_Distribution_in_Space_and_Time.pdf)
 Nature_Inspired_
 
 bshambaugh — 03/29/2024 4:35 PM
