@@ -1,5 +1,5 @@
 bshambaugh — 02/22/2024 2:18 PM
-
+![EISPP_SDD_Brent_Shambaugh_1st_page_edit.png](EISPP_SDD_Brent_Shambaugh_1st_page_edit.png)
 (1st page)
 Brief Description by @gabriel_export
 -Map out your unique skills and expertise.
