@@ -101,7 +101,6 @@ header {
 
 /* Add the "View" label using ::before */
 .view-group::before {
-    content: "View";
     display: block;
     font-weight: bold;
     margin-bottom: 5px;
@@ -121,7 +120,6 @@ header {
 }
 
 .applications-group::before {
-    content: "Applications";
     display: block;
     font-weight: bold;
     margin-bottom: 5px;
@@ -145,7 +143,6 @@ header {
 }
 
 .hp-computing-group::before {
-    content: "HP Computing";
     display: block;
     font-weight: bold;
     margin-bottom: 5px;
@@ -168,7 +165,6 @@ header {
 }
 
 .value-network-and-payments-group::before {
-    content: "Value Network / *";
     display: block;
     font-weight: bold;
     margin-bottom: 5px;
@@ -191,7 +187,6 @@ header {
 }
 
 .edit-triples-group::before {
-    content: "Edit Triples";
     display: block;
     font-weight: bold;
     margin-bottom: 5px;
@@ -214,7 +209,6 @@ header {
 }
 
 .provenance-group::before {
-    content: "Provenance";
     display: block;
     font-weight: bold;
     margin-bottom: 5px;
@@ -237,7 +231,6 @@ header {
 }
 
 .production-group::before {
-    content: "Production";
     display: block;
     font-weight: bold;
     margin-bottom: 5px;
@@ -260,7 +253,6 @@ header {
 }
 
 .iot-group::before {
-    content: "I.O.T.";
     display: block;
     font-weight: bold;
     margin-bottom: 5px;
