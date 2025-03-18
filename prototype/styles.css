@@ -1,0 +1,329 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+
+.container {
+    display: grid;
+    grid-template-areas:
+        "header header"
+        "main main";
+    height: 100vh;
+}
+
+header {
+    grid-area: header;
+    background-color: #004080;
+    color: white;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    overflow-x: auto; /* Add horizontal scrollbar if content overflows */
+}
+
+.toolbar {
+    display: flex;
+    flex-wrap: nowrap; /* Prevent wrapping to a new line */
+    align-items: center;
+    gap: 10px;
+    white-space: nowrap; /* Prevent text wrapping inside elements */
+    overflow-y: hidden; /* Remove vertical scrolling */
+}
+
+.toolbar input[type="text"] {
+    padding: 5px;
+    width: 200px; /* Reduced width to fit better */
+    flex-shrink: 0; /* Prevent input from shrinking too much */
+}
+
+.toolbar button {
+    padding: 5px 10px;
+    background-color: #0055a4;
+    color: white;
+    border: none;
+    cursor: pointer;
+    flex-shrink: 0; /* Prevent buttons from shrinking */
+}
+
+.history-controls-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border: 1px solid white;
+    padding: 5px;
+}
+
+.toolbar .controls {
+    display: flex;
+    gap: 2px;
+}
+
+.toolbar .controls button {
+    padding: 5px;
+    margin: 0;
+}
+
+.main-content {
+    grid-area: main;
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    height: calc(100vh - 50px); /* Adjust based on header height */
+}
+
+.sidebar {
+    background-color: #e0e0e0;
+    padding: 10px;
+    overflow-y: auto;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    padding: 5px 0;
+}
+
+.sidebar ul ul {
+    padding-left: 20px;
+}
+
+/* Style for the View-group */
+.view-group {
+    border: 1px solid #000; /* Border to match the wireframe's grouping style */
+    padding: 5px;
+    margin-bottom: 10px; /* Space between groups */
+}
+
+/* Add the "View" label using ::before */
+.view-group::before {
+    content: "View";
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+}
+
+/* Ensure the items inside view-group are styled properly */
+.view-group li {
+    padding: 2px 0;
+}
+
+/* Style for the Applications-group */
+.applications-group {
+    border: 1px solid #000; /* Border to match the wireframe's grouping style */
+    padding: 5px;
+    margin-bottom: 10px; /* Space between groups */
+}
+
+.applications-group::before {
+    content: "Applications";
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+}
+
+.applications-group ul {
+    margin: 0;
+    padding-left: 20px; /* Maintain nesting indentation */
+}
+
+.applications-group li {
+    padding: 2px 0;
+}
+
+/* New groups */
+.hp-computing-group {
+    border: 1px solid #000;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+.hp-computing-group::before {
+    content: "HP Computing";
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+}
+
+.hp-computing-group ul {
+    margin: 0;
+    padding-left: 20px;
+}
+
+.hp-computing-group li {
+    padding: 2px 0;
+}
+
+.value-network-and-payments-group {
+    border: 1px solid #000;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+.value-network-and-payments-group::before {
+    content: "Value Network / *";
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+}
+
+.value-network-and-payments-group ul {
+    margin: 0;
+    padding-left: 20px;
+}
+
+.value-network-and-payments-group li {
+    padding: 2px 0;
+}
+
+.edit-triples-group {
+    border: 1px solid #000;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+.edit-triples-group::before {
+    content: "Edit Triples";
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+}
+
+.edit-triples-group ul {
+    margin: 0;
+    padding-left: 20px;
+}
+
+.edit-triples-group li {
+    padding: 2px 0;
+}
+
+.provenance-group {
+    border: 1px solid #000;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+.provenance-group::before {
+    content: "Provenance";
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+}
+
+.provenance-group ul {
+    margin: 0;
+    padding-left: 20px;
+}
+
+.provenance-group li {
+    padding: 2px 0;
+}
+
+.production-group {
+    border: 1px solid #000;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+.production-group::before {
+    content: "Production";
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+}
+
+.production-group ul {
+    margin: 0;
+    padding-left: 20px;
+}
+
+.production-group li {
+    padding: 2px 0;
+}
+
+.iot-group {
+    border: 1px solid #000;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+.iot-group::before {
+    content: "I.O.T.";
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+}
+
+.iot-group ul {
+    margin: 0;
+    padding-left: 20px;
+}
+
+.iot-group li {
+    padding: 2px 0;
+}
+
+.content {
+    background-color: white;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.placeholder {
+    display: grid;
+    grid-template-columns: 75% 25%; /* Left 75%, Right 25% */
+    height: 100%;
+    gap: 10px; /* Optional gap between the two parts */
+}
+
+.placeholder-left {
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+}
+
+.placeholder-right {
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+}
+
+/* New class for grouping History and controls with a border */
+.history-controls-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border: 1px solid white; /* White border to match the wireframe */
+    padding: 5px; /* Optional padding inside the border */
+}
+
+/* Ensure the layout takes full height */
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+/* Optional: Style the scrollbar for better aesthetics */
+header::-webkit-scrollbar {
+    height: 8px;
+}
+
+header::-webkit-scrollbar-thumb {
+    background-color: #0055a4;
+    border-radius: 4px;
+}
+
+header::-webkit-scrollbar-track {
+    background-color: #003366;
+}
