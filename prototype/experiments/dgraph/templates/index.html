@@ -1,0 +1,115 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Interactive Graph Visualizer</title>
+    <script type="text/javascript" src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
+    <style>
+        #mynetwork {
+            width: 800px;
+            height: 600px;
+            border: 1px solid lightgray;
+        }
+        #instructions {
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="instructions">
+        <p>Click to add node | Double-click node to rename | Drag node near another to connect</p>
+    </div>
+    <div id="mynetwork"></div>
+
+    <script type="text/javascript">
+        // Initialize network
+        let container = document.getElementById('mynetwork');
+        let data = { nodes: new vis.DataSet(), edges: new vis.DataSet() };
+        let options = {
+            manipulation: { enabled: false },
+            physics: { enabled: true },
+            nodes: {
+                shape: 'dot',
+                size: 20,
+                font: { size: 14 }
+            }
+        };
+        let network = new vis.Network(container, data, options);
+
+        // Load initial data
+        fetch('/get_graph')
+            .then(response => response.json())
+            .then(graph => {
+                data.nodes.add(graph.nodes);
+                data.edges.add(graph.edges);
+            });
+
+        // Add node on click
+        network.on('click', function(params) {
+            if (params.nodes.length === 0 && params.edges.length === 0) {
+                fetch('/add_node', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        x: params.pointer.canvas.x,
+                        y: params.pointer.canvas.y
+                    })
+                })
+                .then(response => response.json())
+                .then(result => {
+                    data.nodes.add(result.node);
+                });
+            }
+        });
+
+        // Rename node on double click
+        network.on('doubleClick', function(params) {
+            if (params.nodes.length > 0) {
+                let nodeId = params.nodes[0];
+                let newLabel = prompt('Enter new node name:');
+                if (newLabel) {
+                    fetch('/update_node', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ id: nodeId, label: newLabel })
+                    })
+                    .then(response => response.json())
+                    .then(() => {
+                        data.nodes.update({ id: nodeId, label: newLabel });
+                    });
+                }
+            }
+        });
+
+        // Add edge when nodes are close
+        network.on('dragEnd', function(params) {
+            if (params.nodes.length > 0) {
+                let fromId = params.nodes[0];
+                let fromNode = data.nodes.get(fromId);
+                
+                data.nodes.forEach(toNode => {
+                    if (toNode.id !== fromId) {
+                        let dx = fromNode.x - toNode.x;
+                        let dy = fromNode.y - toNode.y;
+                        let distance = Math.sqrt(dx * dx + dy * dy);
+                        
+                        if (distance < 100 && !data.edges.get().some(edge => 
+                            (edge.from === fromId && edge.to === toNode.id) || 
+                            (edge.to === fromId && edge.from === toNode.id))) {
+                            fetch('/add_edge', {
+                                method: 'POST',
+                                headers: { 'Content-Type': 'application/json' },
+                                body: JSON.stringify({ from: fromId, to: toNode.id })
+                            })
+                            .then(response => response.json())
+                            .then(result => {
+                                data.edges.add(result.edge);
+                            });
+                        }
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>
