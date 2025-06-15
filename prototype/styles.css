@@ -24,6 +24,10 @@ header {
     overflow-x: auto; /* Add horizontal scrollbar if content overflows */
 }
 
+.button {
+  transition-duration: 0.4s;
+}
+
 .toolbar {
     display: flex;
     flex-wrap: nowrap; /* Prevent wrapping to a new line */
@@ -43,9 +47,14 @@ header {
     padding: 5px 10px;
     background-color: #0055a4;
     color: white;
-    border: none;
+    border: 1px solid #000000;
     cursor: pointer;
     flex-shrink: 0; /* Prevent buttons from shrinking */
+}
+
+.toolbar button:hover {
+  background-color: #04AA6D; /* Green */
+  color: white;
 }
 
 .history-controls-group {
@@ -90,6 +99,15 @@ header {
 
 .sidebar ul ul {
     padding-left: 2px;
+}
+
+.sidebar  button {
+    padding: 5px 10px;
+    background-color: #0055a4;
+    border: 1px solid #000000;
+    border: none;
+    cursor: pointer;
+    flex-shrink: 0; /* Prevent buttons from shrinking */
 }
 
 /* Style for the View-group */
@@ -319,4 +337,3 @@ header::-webkit-scrollbar-thumb {
 header::-webkit-scrollbar-track {
     background-color: #003366;
 }
-
