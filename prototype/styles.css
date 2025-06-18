@@ -104,10 +104,15 @@ header {
 .sidebar  button {
     padding: 5px 10px;
     background-color: #0055a4;
+    color: white;
     border: 1px solid #000000;
-    border: none;
     cursor: pointer;
     flex-shrink: 0; /* Prevent buttons from shrinking */
+}
+
+.sidebar button:hover {
+  background-color: #04AA6D; /* Green */
+  color: white;
 }
 
 /* Style for the View-group */
@@ -337,3 +342,4 @@ header::-webkit-scrollbar-thumb {
 header::-webkit-scrollbar-track {
     background-color: #003366;
 }
+
