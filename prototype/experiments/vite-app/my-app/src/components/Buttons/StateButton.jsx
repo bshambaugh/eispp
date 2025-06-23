@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-function ViewButton({ label, stateName, onStateChange }) {
+function StateButton({ label, stateName, onStateChange }) {
   const [isActive, setIsActive] = useState(false);
 
   const handleClick = () => {
@@ -19,4 +19,4 @@ function ViewButton({ label, stateName, onStateChange }) {
   );
 }
 
-export default ViewButton;
+export default StateButton;

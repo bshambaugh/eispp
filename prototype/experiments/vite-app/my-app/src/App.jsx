@@ -1,8 +1,12 @@
 import React, { useState } from 'react'
 import './App.css'
 
+import { Header, MainContent } from 'components';
+
+/*
 import Header from './components/Header/Header.jsx'
 import MainContent from './components/Main-Content/MainContent.jsx'
+*/
 
 function App() {
 
