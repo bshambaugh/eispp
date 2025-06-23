@@ -1,0 +1,26 @@
+.state2 {
+    .placeholder-left {
+        display: grid;
+        grid-template-rows: 20% 80%;
+        height: 100%;
+        gap: 0;
+        margin: 0;
+        padding: 0;
+
+        .placeholder-left-top {
+            background-color: #f9f9f9;
+            border: 1px solid #ccc;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        .placeholder-left-bottom {
+            background-color: #f9f9f9;
+            border: 1px solid #ccc;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    }
+}

@@ -1,0 +1,9 @@
+.sidebar button.selected {
+    background-color: #ff6200; // Orange for active state
+    color: white;
+    border: 1px solid #000;
+}
+
+.sidebar button.selected:hover {
+    background-color: #e05500; // Darker orange on hover
+}
