@@ -4,7 +4,7 @@ function StateButton({ label, stateName, onStateChange }) {
   const [isActive, setIsActive] = useState(false);
 
   const handleClick = () => {
-    const newState = isActive ? 'state1' : stateName;
+    const newState = isActive ? 'defaultState' : stateName;
     setIsActive(!isActive);
     onStateChange(newState);
   };
