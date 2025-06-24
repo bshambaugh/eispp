@@ -10,10 +10,16 @@ import MainContent from './components/Main-Content/MainContent.jsx'
 
 function App() {
 
+    const [viewState, setViewState] = useState('defaultState'); // Move state here
+  
+    const handleViewChange = (newState) => {
+      setViewState(newState); // Move state update here
+    };
+
   return (
     <div className="container">
         <Header/>
-        <MainContent/>
+        <MainContent  viewState={viewState} onViewChange={handleViewChange}/>
     </div>
  )
 }

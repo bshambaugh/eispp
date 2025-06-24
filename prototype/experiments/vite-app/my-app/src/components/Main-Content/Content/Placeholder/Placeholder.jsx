@@ -1,13 +1,13 @@
-import PlaceholderLeft from './Placeholder-Left/PlaceholderLeft.jsx'
-import PlaceholderRight from './Placeholder-Right/PlaceholderRight.jsx'
+import PlaceholderLeft from './Placeholder-Left/PlaceholderLeft.jsx';
+import PlaceholderRight from './Placeholder-Right/PlaceholderRight.jsx';
 
-function Placeholder() {
-    return (
-        <div className="placeholder">
-            <PlaceholderLeft />
-            <PlaceholderRight />
-        </div>
-    );
+function Placeholder({ viewState }) {
+  return (
+    <div className="placeholder">
+      <PlaceholderLeft viewState={viewState} />
+      <PlaceholderRight />
+    </div>
+  );
 }
 
 export default Placeholder;

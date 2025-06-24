@@ -1,11 +1,11 @@
-.state2 {
-    .placeholder-left {
+.placeholder-left.state-documents {
         display: grid;
         grid-template-rows: 20% 80%;
         height: 100%;
         gap: 0;
         margin: 0;
         padding: 0;
+        border: none; // Remove the outer border inherited from .placeholder-left
 
         .placeholder-left-top {
             background-color: #f9f9f9;
@@ -22,5 +22,4 @@
             margin: 0;
             padding: 0;
         }
-    }
 }
