@@ -11,7 +11,7 @@ function Toolbar() {
               <button>Query</button>
 	        <History />
             <button>Preferences</button>
-            <input type="text" id="uri" name="nlq" placeholder="Data Path or URI"/>
+            <input type="text" id="uri" name="uri" placeholder="Data Path or URI"/>
               <button>Load DATA</button>
               <button>Save DATA</button>
         </div> 
