@@ -1,9 +1,13 @@
+import { ViewStateContext } from "../../../context/ViewStateContext.jsx";
 import Placeholder from "./Placeholder/Placeholder.jsx";
+//import { useContext } from "react";
 
-function Content({viewState}) {
+
+function Content() { 
+   // const { viewState } = useContext(ViewStateContext);
     return (
         <main className="content">
-          <Placeholder viewState={viewState}/>
+          <Placeholder />
        </main>
     );
 }

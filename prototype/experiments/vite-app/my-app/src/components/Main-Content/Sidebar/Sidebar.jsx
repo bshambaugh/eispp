@@ -6,13 +6,16 @@ import EditTriples from './Edit-Triples/EditTriples.jsx'
 import Provenance from './Provenance/Provenance.jsx'
 import Production from './Production/Production.jsx'
 import Iot from './IoT/Iot.jsx'
+import { ViewStateContext } from '../../../context/ViewStateContext.jsx'; // Adjust path
+import { useContext } from 'react';
 
-function Sidebar({ viewState, onViewChange }) {
+function Sidebar() {
+    const { viewState, handleViewChange } = useContext(ViewStateContext);
     return (
         <aside className="sidebar">
             <ul>
                 <li>View
-                    <View viewState={viewState} onViewChange={onViewChange} />
+                    <View viewState={viewState} onViewChange={handleViewChange} />
                 </li>
                 <li>Applications
                     <Applications />
