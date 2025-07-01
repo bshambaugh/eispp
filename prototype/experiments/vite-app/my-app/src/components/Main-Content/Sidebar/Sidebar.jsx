@@ -7,12 +7,12 @@ import Provenance from './Provenance/Provenance.jsx'
 import Production from './Production/Production.jsx'
 import Iot from './IoT/Iot.jsx'
 
-function Sidebar({ viewState, onViewChange }) {
+function Sidebar({ activeStates, onViewChange }) {
     return (
         <aside className="sidebar">
             <ul>
                 <li>View
-                    <View viewState={viewState} onViewChange={onViewChange} />
+                    <View activeStates={activeStates} onViewChange={onViewChange} />
                 </li>
                 <li>Applications
                     <Applications />

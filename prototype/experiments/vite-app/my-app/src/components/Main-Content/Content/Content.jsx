@@ -1,9 +1,9 @@
 import Placeholder from "./Placeholder/Placeholder.jsx";
 
-function Content({viewState}) {
+function Content({activeStates}) {
     return (
         <main className="content">
-          <Placeholder viewState={viewState}/>
+          <Placeholder activeStates={activeStates}/>
        </main>
     );
 }

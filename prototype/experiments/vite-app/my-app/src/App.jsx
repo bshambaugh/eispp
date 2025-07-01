@@ -1,27 +1,34 @@
-import React, { useState } from 'react'
-import './App.css'
-
+import React, { useState } from 'react';
+import './scss/main.scss'; // Assuming SCSS setup
 import { Header, MainContent } from 'components';
-
-/*
-import Header from './components/Header/Header.jsx'
-import MainContent from './components/Main-Content/MainContent.jsx'
-*/
 
 function App() {
 
-    const [viewState, setViewState] = useState('defaultState'); // Move state here
-  
+    const [activeStates, setActiveStates] = useState(['defaultState']); // Array of active states
+
     const handleViewChange = (newState) => {
-      setViewState(newState); // Move state update here
+       setActiveStates((prevStates) => {
+          console.log('handleViewChange: newState=', newState, 'prevStates=', prevStates);
+          if (newState === 'defaultState') {
+            // Deactivate the clicked state by removing it
+            return prevStates.filter((state) => state !== newState);
+          } else {
+            // Toggle the new state
+            return prevStates.includes(newState)
+          ? prevStates.filter((state) => state !== newState) // Deactivate if already active
+          : [...prevStates, newState]; // Activate if not active
+          }
+       });  
     };
 
-  return (
+
+ return (
     <div className="container">
-        <Header/>
-        <MainContent  viewState={viewState} onViewChange={handleViewChange}/>
+    <Header />
+    <MainContent activeStates={activeStates} onViewChange={handleViewChange} />
     </div>
- )
+ );
+
 }
 
 export default App;

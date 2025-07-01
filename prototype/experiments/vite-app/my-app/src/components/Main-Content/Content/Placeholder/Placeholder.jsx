@@ -1,10 +1,11 @@
 import PlaceholderLeft from './Placeholder-Left/PlaceholderLeft.jsx';
 import PlaceholderRight from './Placeholder-Right/PlaceholderRight.jsx';
 
-function Placeholder({ viewState }) {
+function Placeholder({ activeStates }) {
+  console.log('PlaceholderLeft activeStates:', activeStates);
   return (
     <div className="placeholder">
-      <PlaceholderLeft viewState={viewState} />
+      <PlaceholderLeft activeStates={activeStates} />
       <PlaceholderRight />
     </div>
   );
