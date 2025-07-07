@@ -1,32 +1,36 @@
 import React, { useState } from 'react';
-import './scss/main.scss'; // Assuming SCSS setup
+import './scss/main.scss';
 import { Header, MainContent } from 'components';
 
 function App() {
+  const [activeStates, setActiveStates] = useState(['defaultState']);
 
-    const [activeStates, setActiveStates] = useState(['defaultState']); // Array of active states
-
-    const handleViewChange = (newState) => {
-      setActiveStates((prevStates) => {
-        console.log('handleViewChange: newState=', newState, 'prevStates=', prevStates, 'activeStates', activeStates);
-        if (newState !== 'defaultState') {
-          return prevStates.includes(newState)
+  const handleViewChange = (newState) => {
+    setActiveStates((prevStates) => {
+      console.log('handleViewChange: newState=', newState, 'prevStates=', prevStates, 'activeStates', activeStates);
+      
+      if (newState !== 'defaultState') {
+        // Remove if exists, add if not exists, and remove defaultState
+        const newStates = prevStates.includes(newState)
           ? prevStates.filter((state) => state !== newState) // Remove if exists
-          : [...prevStates, newState]; // Add if not exists
-        } else {
-         return prevStates;
-         // return [...prevStates, newState];
-        }
-      });
-    };
+          : [...prevStates.filter((state) => state !== 'defaultState'), newState]; // append newState if it does not exist, 
+         // remove 'defaultState' if it exists in prevStates
+        
+        // If no states remain after filtering, return ['defaultState']
+        return newStates.length > 0 ? newStates : ['defaultState'];
+      }
+      
+      // If newState is 'defaultState', return current states
+      return prevStates;
+    });
+  };
 
- return (
+  return (
     <div className="container">
-    <Header />
-    <MainContent activeStates={activeStates} onViewChange={handleViewChange} />
+      <Header />
+      <MainContent activeStates={activeStates} onViewChange={handleViewChange} />
     </div>
- );
-
+  );
 }
 
 export default App;
