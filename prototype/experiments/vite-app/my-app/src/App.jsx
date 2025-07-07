@@ -7,20 +7,18 @@ function App() {
     const [activeStates, setActiveStates] = useState(['defaultState']); // Array of active states
 
     const handleViewChange = (newState) => {
-       setActiveStates((prevStates) => {
-          console.log('handleViewChange: newState=', newState, 'prevStates=', prevStates);
-          if (newState === 'defaultState') {
-            // Deactivate the clicked state by removing it
-            return prevStates.filter((state) => state !== newState);
-          } else {
-            // Toggle the new state
-            return prevStates.includes(newState)
-          ? prevStates.filter((state) => state !== newState) // Deactivate if already active
-          : [...prevStates, newState]; // Activate if not active
-          }
-       });  
+      setActiveStates((prevStates) => {
+        console.log('handleViewChange: newState=', newState, 'prevStates=', prevStates, 'activeStates', activeStates);
+        if (newState !== 'defaultState') {
+          return prevStates.includes(newState)
+          ? prevStates.filter((state) => state !== newState) // Remove if exists
+          : [...prevStates, newState]; // Add if not exists
+        } else {
+         return prevStates;
+         // return [...prevStates, newState];
+        }
+      });
     };
-
 
  return (
     <div className="container">

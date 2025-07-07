@@ -1,22 +1,17 @@
-import React, { useState } from 'react';
+// src/components/Buttons/StateButton.jsx
+import React from 'react';
 
-function StateButton({ label, stateName, onStateChange, isActive: propIsActive })
-{
-  const [isActive, setIsActive] = useState(propIsActive); // Sync with prop
-  
+function StateButton({ label, stateName, onStateChange, isActive: propIsActive }) {
   const handleClick = () => {
-    const newState = isActive ? 'defaultState' : stateName; // Toggle to default or stateName
-    console.log('StateButton clicked:', label, 'newState:', newState);
-    setIsActive(!isActive);
-    onStateChange(newState);
+    onStateChange(stateName); // Trigger state change in parent
   };
-  
+
   return (
     <button
-      className={isActive ? 'selected' : ''}
+      className={propIsActive ? 'selected' : ''}
       onClick={handleClick}
     >
-    {label}
+      {label}
     </button>
   );
 }
