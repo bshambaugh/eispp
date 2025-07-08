@@ -13,3 +13,5 @@ function View({ activeStates, onViewChange }) {
 }
 
 export default View;
+
+// Data should expand to 'OPM','directed graph','faceted browsing','fresnel', and 'gss' through Preferences

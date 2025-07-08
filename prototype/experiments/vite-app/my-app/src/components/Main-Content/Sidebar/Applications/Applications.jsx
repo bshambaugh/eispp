@@ -14,3 +14,6 @@ function Applications() {
 }
 
 export default Applications;
+
+// Add additional Applications to list with Preferences, this would be loading new react components 
+// for the app
