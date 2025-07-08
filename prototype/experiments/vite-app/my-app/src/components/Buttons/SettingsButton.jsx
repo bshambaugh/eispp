@@ -1,6 +1,4 @@
 import { FaCog } from 'react-icons/fa';
-//import '..//scss/Buttons/aettings-button.scss'; // Import the SCSS file
-//import styles from '../../scss/Buttons/SettingsButton.module.scss';
 
 function SettingsButton() {
   return (
