@@ -5,12 +5,19 @@
   padding: 0px 0px;
   font-size: 16px;
   cursor: pointer;
-  background-color: transparent !important; /* Force transparency */
-  border: none !important; /* Force no border */
+  background-color: transparent; // !important; /* Force transparency */
+  border: none; //!important; /* Force no border */
 }
 
+.sidebar-item-content .button-style:hover {
+  background-color: transparent; // overwrite global state for button
+}
 
 .icon-style {
   font-size: 16px;
   color: #808080; // Medium grey for the cogwheel
+}
+
+.icon-style:hover {
+  color: white;
 }
