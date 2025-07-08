@@ -1,0 +1,10 @@
+.sidebar-item-content {
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Space between "View" and SettingsButton */
+  }
+  
+  .sidebar-item {
+    display: flex;
+    flex-direction: column; /* Ensures <View /> appears below */
+  }
