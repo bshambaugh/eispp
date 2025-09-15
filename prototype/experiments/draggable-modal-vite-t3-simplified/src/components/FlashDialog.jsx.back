@@ -1,0 +1,51 @@
+import React, { useRef, useState } from 'react';
+import './FlashDialog.css';
+
+const FlashDialog = () => {
+    const dialogRef = useRef(null);
+    const [position, setPosition] = useState({ x: 100, y: 100 });
+    const [isDragging, setIsDragging] = useState(false);
+    const [initialMousePos, setInitialMousePos] = useState({ x: 0, y: 0 });
+
+    const startDragging = (e) => {
+        console.log('startDragging');
+        setIsDragging(true);
+        setInitialMousePos({ x: e.clientX - position.x, y: e.clientY - position.y });
+        document.addEventListener('mousemove', handleDrag);
+        document.addEventListener('mouseup', stopDragging);
+    };
+
+    const handleDrag = (e) => {
+        if (isDragging) {
+        e.preventDefault();
+        console.log('handleDrag', e.clientX, e.clientY);
+        setPosition({
+             x: e.clientX - initialMousePos.x,
+             y: e.clientY - initialMousePos.y,
+        });
+      }
+    };
+
+    const stopDragging = () => {
+        console.log('stopDragging');
+        setIsDragging(false);
+        document.removeEventListener('mousemove', handleDrag);
+        document.removeEventListener('mouseup', stopDragging);
+    };
+
+    return (
+        <div
+        ref={dialogRef}
+        className="dialog"
+        style={{ left: `${position.x}px`, top: `${position.y}px` }}
+        >
+        <div className="dialog-header" onMouseDown={startDragging}>
+        Drag Me
+        </div>
+        </div>
+    );
+};
+
+export default FlashDialog;
+
+

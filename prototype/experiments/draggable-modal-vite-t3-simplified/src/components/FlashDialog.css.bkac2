@@ -1,0 +1,33 @@
+   /* Dialog box styling */
+   .dialog {
+    position: absolute !important;
+    top: 100px !important;
+    left: 100px !important;
+    width: 300px;
+    min-width: 200px; /* Prevent shrinking too small */
+    min-height: 250px; /* Minimum height to show all content */
+    background-color: #f0f0f0;
+    border: 1px solid #333;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    font-family: Arial, sans-serif;
+    cursor: default;
+    resize: both; /* Enable resizing */
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Stack children vertically */
+    height: auto; /* Allow height to grow with content */
+    overflow: auto; /* Required for resize to work */
+  }
+
+  /* Title bar */
+  .dialog-header {
+    background-color: #666;
+    color: white;
+    padding: 5px;
+    font-size: 14px;
+    user-select: none;
+    cursor: move;
+    flex: 0 0 auto; /* Fixed height, no grow/shrink */
+  }
+
+  
