@@ -1,0 +1,73 @@
+/* src/components/FlashDialog.css */
+.dialog {
+    position: absolute;
+    background-color: #f0f0f0;
+    border: 1px solid #333;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    font-family: Arial, sans-serif;
+    cursor: default;
+    display: flex;
+    flex-direction: column;
+    min-width: 200px;
+    min-height: 150px;
+    }
+    .dialog-header {
+    background-color: #666;
+    color: white;
+    padding: 5px;
+    font-size: 14px;
+    user-select: none;
+    cursor: move;
+    flex: 0 0 auto;
+    }
+    .dialog-close {
+    float: right;
+    background: none;
+    border: none;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    .dialog-content {
+    padding: 10px;
+    background-color: #fff;
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    min-height: 160px;
+    }
+.scrollable-text {
+width: 100%;
+flex: 1 1 auto;
+border: 1px solid #999;
+background-color: #f9f9f9;
+padding: 5px;
+overflow-y: auto;
+font-family: Arial, sans-serif;
+font-size: 12px;
+resize: none;
+box-sizing: border-box;
+min-height: 50px;
+}
+.dialog button {
+background-color: #ccc;
+border: 1px solid #999;
+padding: 5px 10px;
+cursor: pointer;
+align-self: flex-start;
+flex: 0 0 auto;
+}
+.dialog button:hover {
+background-color: #ddd;
+}
+.resize-handle {
+position: absolute;
+bottom: 0;
+right: 0;
+width: 15px;
+height: 15px;
+background-color: #999;
+cursor: se-resize;
+border: 2px dashed #333;
+}

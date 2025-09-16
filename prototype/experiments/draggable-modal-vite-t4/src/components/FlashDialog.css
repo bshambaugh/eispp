@@ -1,0 +1,80 @@
+   /* Dialog box styling */
+   .dialog {
+    position: absolute;
+    top: 100px;
+    left: 100px;
+    width: 300px;
+    min-width: 200px; /* Prevent shrinking too small */
+    min-height: 250px; /* Minimum height to show all content */
+    background-color: #f0f0f0;
+    border: 1px solid #333;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    font-family: Arial, sans-serif;
+    cursor: default;
+    resize: both; /* Enable resizing */
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Stack children vertically */
+    height: auto; /* Allow height to grow with content */
+    overflow: auto; /* Required for resize to work */
+  }
+
+  /* Title bar */
+  .dialog-header {
+    background-color: #666;
+    color: white;
+    padding: 5px;
+    font-size: 14px;
+    user-select: none;
+    cursor: move;
+    flex: 0 0 auto; /* Fixed height, no grow/shrink */
+  }
+
+  /* Content area */
+  .dialog-content {
+    padding: 10px;
+    background-color: #fff;
+    flex: 1 1 auto; /* Grow and shrink with dialog */
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Space between elements */
+    min-height: 120px;  /* Minimum height to ensure all content is visible */
+  }
+
+  /* Close button */
+  .dialog-close {
+    float: right;
+    background: none;
+    border: none;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  /* Scrolling text field */
+  .scrollable-text {
+    width: 100%;
+    flex: 1 1 auto; /* Grow and shrink with content area */
+    border: 1px solid #999;
+    background-color: #f9f9f9;
+    padding: 5px;
+    overflow-y: auto; /* Scroll only when text overflows */
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    resize: none;
+    box-sizing: border-box;
+    min-height: 50px; /* Minimum height for text field */
+  }
+
+  /* Retro Flash-like button */
+  .dialog button {
+    background-color: #ccc;
+    border: 1px solid #999;
+    padding: 5px 10px;
+    cursor: pointer;
+    align-self: flex-start; /* Keep button at the top of its space */
+    flex: 0 0 auto; /* Fixed height, no grow/shrink */
+  }
+  .dialog button:hover {
+    background-color: #ddd;
+  }
