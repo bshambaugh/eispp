@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Draggable and Resizable Dialog</title>
+  <style>
+    /* Dialog box styling */
+    .dialog {
+      position: absolute;
+      top: 100px;
+      left: 100px;
+      width: 300px;
+      min-width: 200px; /* Prevent shrinking too small */
+      min-height: 250px; /* Minimum height to show all content */
+      background-color: #f0f0f0;
+      border: 1px solid #333;
+      box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+      z-index: 1000;
+      font-family: Arial, sans-serif;
+      cursor: default;
+      resize: both; /* Enable resizing */
+      display: flex; /* Use flexbox for layout */
+      flex-direction: column; /* Stack children vertically */
+      height: auto; /* Allow height to grow with content */
+      overflow: auto; /* Required for resize to work */
+    }
+
+    /* Title bar */
+    .dialog-header {
+      background-color: #666;
+      color: white;
+      padding: 5px;
+      font-size: 14px;
+      user-select: none;
+      cursor: move;
+      flex: 0 0 auto; /* Fixed height, no grow/shrink */
+    }
+
+    /* Content area */
+    .dialog-content {
+      padding: 10px;
+      background-color: #fff;
+      flex: 1 1 auto; /* Grow and shrink with dialog */
+      display: flex;
+      flex-direction: column;
+      gap: 10px; /* Space between elements */
+      min-height: 120px;  /* Minimum height to ensure all content is visible */
+    }
+
+    /* Close button */
+    .dialog-close {
+      float: right;
+      background: none;
+      border: none;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    /* Scrolling text field */
+    .scrollable-text {
+      width: 100%;
+      flex: 1 1 auto; /* Grow and shrink with content area */
+      border: 1px solid #999;
+      background-color: #f9f9f9;
+      padding: 5px;
+      overflow-y: auto; /* Scroll only when text overflows */
+      font-family: Arial, sans-serif;
+      font-size: 12px;
+      resize: none;
+      box-sizing: border-box;
+      min-height: 50px; /* Minimum height for text field */
+    }
+
+    /* Retro Flash-like button */
+    .dialog button {
+      background-color: #ccc;
+      border: 1px solid #999;
+      padding: 5px 10px;
+      cursor: pointer;
+      align-self: flex-start; /* Keep button at the top of its space */
+      flex: 0 0 auto; /* Fixed height, no grow/shrink */
+    }
+    .dialog button:hover {
+      background-color: #ddd;
+    }
+  </style>
+</head>
+<body>
+  <div class="dialog" id="myDialog">
+    <div class="dialog-header">
+      Flash-Style Dialog
+      <button class="dialog-close" onclick="closeDialog()">X</button>
+    </div>
+    <div class="dialog-content">
+      <p>Scrollable Text Field:</p>
+      <div class="scrollable-text" contenteditable="true">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+      </div>
+      <button onclick="alert('Action!')">Click Me</button>
+    </div>
+  </div>
+
+  <script>
+    const dialog = document.getElementById('myDialog');
+    const header = dialog.querySelector('.dialog-header');
+    let isDragging = false;
+    let currentX;
+    let currentY;
+    let initialX;
+    let initialY;
+
+    header.addEventListener('mousedown', startDragging);
+
+    function startDragging(e) {
+      initialX = e.clientX - currentX;
+      initialY = e.clientY - currentY;
+      isDragging = true;
+      document.addEventListener('mousemove', drag);
+      document.addEventListener('mouseup', stopDragging);
+    }
+
+    function drag(e) {
+      if (isDragging) {
+        e.preventDefault();
+        currentX = e.clientX - initialX;
+        currentY = e.clientY - initialY;
+        dialog.style.left = currentX + 'px';
+        dialog.style.top = currentY + 'px';
+      }
+    }
+
+    function stopDragging() {
+      isDragging = false;
+      document.removeEventListener('mousemove', drag);
+      document.removeEventListener('mouseup', stopDragging);
+    }
+
+    currentX = dialog.offsetLeft;
+    currentY = dialog.offsetTop;
+
+    function closeDialog() {
+      dialog.style.display = 'none';
+    }
+  </script>
+</body>
+</html>
