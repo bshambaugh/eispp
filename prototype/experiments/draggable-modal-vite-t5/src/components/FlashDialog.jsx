@@ -20,13 +20,34 @@ const FlashDialog = () => {
         document.addEventListener("mousemove",handleDrag);
         document.addEventListener("mouseup",stopDragging);
     }
-   
+ /*  
     const handleDrag = (e) => {
        if(!isDraggingRef.current) return;
        const newX = (e.clientX - offsetRef.current.x) < 0 ? 0 : e.clientX - offsetRef.current.x;
        const newY = (e.clientY - offsetRef.current.y) < 0 ? 0 : e.clientY - offsetRef.current.y;
        positionRef.current = {x:newX,y:newY};
        setPosition({x:newX,y:newY}) // update UI
+    }
+*/
+/*
+    const handleDrag = (e) => {
+        if(!isDraggingRef.current) return;
+        const newX = Math.max(0,e.clientX - offsetRef.current.x);
+        const newY = Math.max(0,e.clientY - offsetRef.current.y);
+        positionRef.current = {x:newX,y:newY};
+        setPosition({x:newX,y:newY})
+    }
+*/
+    const handleDrag = (e) => {
+        if(!isDraggingRef.current) return;
+        const dialog = dialogRef.current;
+        if(!dialog) return;
+        const maxX = window.innerWidth - dialog.offsetWidth;
+        const maxY = window.innerHeight - dialog.offsetHeight;
+        const newX = Math.max(0,Math.min(maxX,e.clientX - offsetRef.current.x));
+        const newY = Math.max(0,Math.min(maxY,e.clientY - offsetRef.current.y));
+        positionRef.current = {x:newX,y:newY};
+        setPosition({x:newX,y:newY})
     }
 /*
     const handleDrag = (e) => {
