@@ -1,0 +1,31 @@
+.tabbed-box {
+  width: 400px;
+  border: 1px solid #ccc;
+  font-family: monospace;
+}
+
+.tabs {
+  display: flex;
+  border-bottom: 1px solid #ccc;
+}
+
+.tabs button {
+  padding: 10px 20px;
+  cursor: pointer;
+  border: none;
+  background: #f0f0f0;
+  outline: none;
+}
+
+.tabs button.active {
+  background: #fff;
+  border-bottom: 2px solid #000;
+}
+
+.tab-content {
+  padding: 10px;
+}
+
+.content {
+  margin: 0;
+}
