@@ -1,0 +1,84 @@
+.tabbed-box {
+  width: 400px;
+  border: 1px solid #ccc;
+  font-family: monospace;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.tabs {
+  display: flex;
+  border-bottom: 1px solid #ccc;
+  background: #f9f9f9;
+  padding: 5px;
+}
+
+.tab-item {
+  position: relative;
+  margin-right: 5px;
+  display: flex;
+  align-items: center;
+}
+
+.tabs button {
+  padding: 8px 15px;
+  cursor: pointer;
+  border: 1px solid #ccc; /* Border around tabs */
+  background: #fff;
+  outline: none;
+  border-radius: 5px 5px 0 0; /* Rounded top corners */
+  font-weight: bold;
+  color: #333;
+  transition: border-bottom 0.3s;
+  margin: 0;
+}
+
+.tabs button.active {
+  border-bottom: 2px solid #000; /* Black bottom border for active tab */
+  background: #fff;
+}
+
+.remove-tab {
+  padding: 0 5px;
+  background: #ff4444;
+  color: white;
+  border: 1px solid #cc0000;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  margin-left: 5px;
+  z-index: 2;
+  line-height: 20px;
+  text-align: center;
+}
+
+.add-tab {
+  padding: 8px 15px;
+  cursor: pointer;
+  border: none; /* No border */
+  background: transparent; /* No background */
+  color: #000; /* Black color for visibility against #f9f9f9 */
+  border-radius: 5px 5px 0 0; /* Match tab corner style */
+  margin-left: 5px;
+  font-weight: bold;
+  line-height: 20px;
+  text-align: center;
+  font-size: 16px; /* Ensure + is prominent */
+}
+
+.tab-content {
+  padding: 10px;
+  background: #fff;
+  border-left: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  border-radius: 0 0 10px 10px;
+}
+
+.content {
+  margin: 0;
+  white-space: pre-wrap;
+  border: none;
+}
