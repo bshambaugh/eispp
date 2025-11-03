@@ -1,0 +1,52 @@
+/* src/components/TabTagButton.module.css */
+.parentButton {
+  display: inline-flex;
+  align-items: center;
+  background-color: #f0f0f0;         /* same as original tabs */
+  padding: 5px 15px 5px 10px;
+  border: 1px solid #ccc;
+  /* ---- TOP corners rounded, bottom corners square ---- */
+  border-radius: 10px 10px 0 0;
+  font-size: 14px;
+  cursor: pointer;
+  position: relative;
+  transition: background-color 0.2s;
+}
+
+/* -------------------------------------------------
+   ACTIVE STATE – white background + black underline
+   ------------------------------------------------- */
+.parentButton.active {
+  background: #fff;               /* white like original .active */
+  border-bottom: 2px solid #000;    /* the black line */
+  padding-bottom: 3px;              /* push the line down a bit */
+}
+
+/* Hover (optional – keep the same feel) */
+.parentButton:hover:not(.active) {
+  background-color: #e6e6e6;
+}
+
+/* Text part */
+.parentButton .text {
+  margin-right: 10px;
+  color: #2c3e50;
+}
+
+/* X button – stays inside the pill */
+.closeContainer {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  font-size: 12px;
+  color: #000;
+  background: transparent;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+.closeContainer:hover {
+  background-color: #a9a9a9;
+}

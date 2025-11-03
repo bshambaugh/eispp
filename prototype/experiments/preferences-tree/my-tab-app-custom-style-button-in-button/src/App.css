@@ -1,0 +1,41 @@
+/* src/App.css – keep only the box and content styling */
+.tabbed-box {
+  width: 400px;
+  border: 1px solid #ccc;
+  font-family: monospace;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.tabs {
+  display: flex;
+  border-bottom: 1px solid #ccc;
+}
+
+/* ---- NEW: gap between tabs (same as before) ---- */
+.tabs > * {
+  margin-right: 2px;
+}
+.tabs > *:last-child {
+  margin-right: 0;
+}
+
+/* ---- + button – identical shape to tabs ---- */
+.add-tab {
+  padding: 10px 15px;
+  background: #f0f0f0;
+  border: 1px solid #ccc;
+  border-radius: 10px 10px 0 0;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1.1em;
+}
+.add-tab:hover {
+  background: #e6e6e6;
+}
+
+.tab-content {
+  padding: 10px;
+  border-radius: 0 0 10px 10px;
+  background: #fff;
+}
