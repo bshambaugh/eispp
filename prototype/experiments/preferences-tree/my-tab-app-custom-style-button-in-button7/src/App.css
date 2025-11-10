@@ -1,0 +1,175 @@
+/* src/App.css – keep only the box and content styling */
+.tabbed-box {
+  width: 400px;
+  border: 1px solid #ccc;
+  font-family: monospace;
+  border-radius: 0px; /* changed from 10 to 0 */
+  overflow: hidden;
+}
+
+.tabs {
+  display: flex;
+  border-bottom: 1px solid #ccc;
+}
+
+/* styling for misc buttons */
+
+.tabs button {
+  padding: 10px 20px;
+  cursor: pointer;
+  border: 1px solid #ccc;
+  background: #f0f0f0;
+  outline: none;
+  border-radius: 10px 10px 0 0; /* Curved top-left and top-right, flat bottom */
+  margin-right: 2px; /* Small gap between tabs */
+}
+
+.tabs button.active {
+  background: #fff;
+  border-bottom: 2px solid #000;
+}
+
+.tabs button:last-child {
+  margin-right: 0; /* Remove margin from the last tab */
+}
+
+/* end styling */
+
+/* ---- NEW: gap between tabs (same as before) ---- */
+.tabs > * {
+  margin-right: 2px;
+}
+.tabs > *:last-child {
+  margin-right: 0;
+}
+
+/* ---- + button – identical shape to tabs ---- */
+.add-tab {
+  padding: 10px 15px;
+  background: #f0f0f0;
+  border: 1px solid #ccc;
+  border-radius: 10px 10px 0 0;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1.1em;
+}
+.add-tab:hover {
+  background: #e6e6e6;
+}
+
+/*
+.tab-content {
+  padding: 10px;
+  border-radius: 0 0 10px 10px;
+  background: #fff;
+}
+*/
+
+/* ------------------------------------------------------------------ */
+/*  OLD .tab-content – keep the wrapper height, remove the old style   */
+/* ------------------------------------------------------------------ */
+.tab-content {
+  width: 100%;
+  border-top: none;               /* no double border with the tab bar */
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  height: 200px;
+  min-height: 80px;
+  max-height: 60vh;
+}
+
+/* ------------------------------------------------------------------ */
+/*  NEW: scrollable editable text field                               */
+/* ------------------------------------------------------------------ */
+.tab-content-editable {
+  min-height: 0;
+  width: 100%;
+  flex: 1 1 auto;                 /* fill remaining height */
+  border: 1px solid #999;
+  background-color: #f9f9f9;
+  padding: 8px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+  font-size: 13px;
+  resize: none;
+  line-height: 1.4;
+  outline: none;                  /* remove focus outline, optional */
+  box-sizing: border-box;
+  min-height: 80px;
+  white-space: pre;               /* preserve whitespace & line-breaks */
+  tab-size: 2;
+}
+
+/* optional – nice caret & selection */
+.tab-content-editable::selection {
+  background: rgba(0,120,215,0.3);
+}
+
+/* src/App.css – keep everything you already have, just add/replace below */
+
+/* ------------------------------------------------------------------ */
+/*  NEW: scrollable tab bar                                            */
+/* ------------------------------------------------------------------ */
+.tabs-wrapper {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #ccc;
+  position: relative;          /* for arrow positioning */
+}
+
+.tabs-scroll {
+  flex: 1;
+  display: flex;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;   /* smooth on iOS */
+  gap: 2px;                     /* replaces the old margin-right */
+  padding: 0 4px;               /* tiny inner padding so arrows don’t overlap */
+}
+
+/* hide scrollbar but keep functionality */
+.tabs-scroll::-webkit-scrollbar {
+  display: none;
+}
+.tabs-scroll {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* ------------------------------------------------------------------ */
+/*  Arrow buttons                                                     */
+/* ------------------------------------------------------------------ */
+.scroll-arrow {
+  background: #f0f0f0;
+  border: 1px solid #ccc;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 1.2rem;
+  user-select: none;
+  z-index: 10;
+}
+.scroll-arrow:hover {
+  background: #e6e6e6;
+}
+.scroll-arrow.left  { border-radius: 6px 0 0 6px; }
+.scroll-arrow.right { border-radius: 0 6px 6px 0; }
+
+/* ------------------------------------------------------------------ */
+/*  Make sure the + button stays the same size                         */
+/* ------------------------------------------------------------------ */
+.add-tab {
+  flex-shrink: 0;               /* never shrink */
+  margin-left: 2px;
+}
+
+/* ------------------------------------------------------------------ */
+/*  OPTIONAL: keep old button styles (they are no longer used)        */
+/* ------------------------------------------------------------------ */
+/* .tabs button { … }  ← you can delete this whole block now */
