@@ -1,0 +1,267 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: #f5f5f5;
+    margin: 0;
+    padding: 20px;
+  }
+  
+  .container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  }
+  
+  h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 30px;
+  }
+  
+  .option-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    margin: 24px 0;
+    padding: 12px;
+    border-radius: 8px;
+    transition: background 0.2s;
+  }
+  
+  .option-row:hover {
+    background: #f9f9f9;
+  }
+  
+  .row-checkbox {
+    position: relative;
+    cursor: pointer;
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+    margin-top: 4px;
+  }
+  
+  .row-checkbox input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 24px;
+    width: 24px;
+    background-color: white;
+    border: 2px solid #333;
+    border-radius: 6px;
+    transition: all 0.2s;
+  }
+  
+  .row-checkbox input:checked ~ .checkmark {
+    background-color: #2196F3;
+    border-color: #2196F3;
+  }
+  
+  .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  
+  .row-checkbox input:checked ~ .checkmark:after {
+    display: block;
+  }
+  
+  .row-checkbox .checkmark:after {
+    left: 8px;
+    top: 4px;
+    width: 6px;
+    height: 12px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    transform: rotate(45deg);
+  }
+  
+  .radio-group {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    flex: 1;
+  }
+  
+  .radio-group label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    font-size: 15px;
+    color: #333;
+    user-select: none;
+  }
+  
+  .radio-group label.disabled {
+    color: #999;
+    cursor: not-allowed;
+  }
+  
+  .radio-mark {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #333;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+  
+  .radio-group input:checked + .radio-mark {
+    border-color: #2196F3;
+  }
+  
+  .radio-group input:checked + .radio-mark:after {
+    content: "";
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    width: 8px;
+    height: 8px;
+    background: #2196F3;
+    border-radius: 50%;
+  }
+  
+  .radio-group input:disabled + .radio-mark {
+    border-color: #ccc;
+    background: #f0f0f0;
+  }
+  
+  .submit-btn {
+    margin-top: 30px;
+    padding: 12px 24px;
+    font-size: 16px;
+    background: #2196F3;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  
+  .submit-btn:hover {
+    background: #1976D2;
+  }
+
+  .layout-selector {
+    margin-top: 12px;
+    margin-left: 28px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+  }
+  
+  .layout-dropdown {
+    padding: 6px 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    background: white;
+    font-size: 14px;
+  }
+  
+  .layout-dropdown:focus {
+    outline: none;
+    border-color: #2196F3;
+    box-shadow: 0 0 0 2px rgba(33, 150, 243, 0.2);
+  }
+
+  .options-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex: 1;
+  }
+  
+  .radio-line {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-height: 32px;
+  }
+  
+  .radio-line label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    font-size: 15px;
+    color: #333;
+    white-space: nowrap;
+  }
+  
+  .radio-line label.disabled {
+    color: #999;
+    cursor: not-allowed;
+  }
+  
+  /* This makes the dropdown appear on the same line */
+  .layout-inline {
+    margin-left: 2rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+  }
+  
+  .layout-dropdown-inline {
+    padding: 4px 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    background: white;
+    font-size: 14px;
+    min-width: 200px;
+  }
+  
+  .layout-dropdown-inline:focus {
+    outline: none;
+    border-color: #2196F3;
+    box-shadow: 0 0 0 2px rgba(33,150,243,0.2);
+  }
+  
+  /* Optional: make selected radio text bold/blue like your mockup */
+  .radio-line input:checked + .radio-mark + * {
+    font-weight: 600;
+    color: #1976d2;
+  }
+
+  /* Make the currently selected radio option stand out */
+input[type="radio"]:checked + * {
+  font-weight: 600 !important;
+  color: #1976d2 !important;
+}
+
+/* Makes the entire row clickable for single-option groups */
+/* Single-option row (AI Output) – entire row is clickable */
+.full-row-label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  font-size: 15px;
+  width: 100%;
+  padding: 8px 0;
+}
+
+.single-option-text {
+  flex: 1;
+}
+
+/* Optional: make selected single-option text bold/blue like others */
+.full-row-label input:checked ~ .single-option-text {
+  font-weight: 600;
+  color: #1976d2;
+}
