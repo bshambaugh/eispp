@@ -1,0 +1,142 @@
+* { box-sizing: border-box; }
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: #f8f9fa;
+  margin: 0;
+  padding: 20px;
+  color: #333;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  background: white;
+  padding: 32px;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 32px;
+  font-weight: 600;
+}
+
+.option-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 12px;
+  border-radius: 12px;
+  transition: background 0.2s;
+  margin-bottom: 12px;
+}
+
+.option-row:hover {
+  background: #f5f7fa;
+}
+
+.row-toggle {
+  margin-top: 4px;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.options-wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.radio-line {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 15px;
+}
+
+.full-row-label, .linked-data-label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  font-size: 15px;
+  width: 100%;
+  padding: 8px 0;
+  flex-wrap: wrap;
+}
+
+.linked-data-label {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  justify-content: flex-start;
+}
+
+.degree-input {
+  width: 90px;
+  height: 70px;
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  border: 4px solid #000;
+  border-radius: 8px;
+  background: white;
+  padding: 0;
+  margin: 0 0.5rem;
+}
+
+.degree-input:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 4px rgba(0, 123, 255, 0.25);
+}
+
+.degree-input::placeholder {
+  color: transparent;
+}
+
+.degree-input.empty {
+  color: transparent;
+}
+
+.layout-inline {
+  margin-left: 2rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+}
+
+.layout-inline select {
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+.submit-btn {
+  display: block;
+  margin: 32px auto 0;
+  padding: 12px 32px;
+  font-size: 16px;
+  background: #1976d2;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.submit-btn:hover {
+  background: #1565c0;
+}
+
+.radio-line input[type="radio"]:checked + *,
+.full-row-label input[type="checkbox"]:checked + * {
+  font-weight: 600;
+  color: #1976d2;
+}

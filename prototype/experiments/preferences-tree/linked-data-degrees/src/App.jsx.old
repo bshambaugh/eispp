@@ -1,0 +1,50 @@
+import { useState } from 'react'
+import './App.css'
+
+function App() {
+  const [value, setValue] = useState('1')
+
+  const handleChange = (e) => {
+    const input = e.target.value
+    // Only allow empty string or positive integers
+    if (input === '' || /^\d+$/.test(input)) {
+      if (input === '0') return          // ← prevents typing 0
+      setValue(input)
+    }
+  }
+
+  const num = value === '' ? 0 : parseInt(value, 10)
+  const degreesText = 
+  !value || value === '0'          // ← empty OR "0"
+    ? 'no degrees'
+    : num === 1 
+      ? 'degree' 
+      : 'degrees';
+  //const degreesText = num === 0 ? 'no degrees' : (1 ? 'degree' : 'degrees')
+
+  return (
+    <div className="container">
+      <label className="label">
+        Show
+        <input
+          type="text"
+          inputMode="numeric"
+          pattern="[0-9]*"
+          value={value}
+          onChange={handleChange}
+          className="number-input"
+        />
+        {num > 0 && ` ${degreesText}`} for Linked Data
+      </label>
+
+      {/* Optional: show the parsed number below */}
+      {value && (
+        <p className="result">
+          Current value: <strong>{num}</strong> {degreesText}
+        </p>
+      )}
+    </div>
+  )
+}
+
+export default App
