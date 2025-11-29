@@ -1,0 +1,86 @@
+/* src/components/preferences/LensEditor.module.css */
+
+.editor {
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+    font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+    background: white;
+  }
+  
+  .tabBar {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #ccc;
+    position: relative;
+    background: #f8f8f8;
+  }
+  
+  .tabScroll {
+    flex: 1;
+    display: flex;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+    gap: 4px;
+    padding: 4px;
+  }
+  
+  .tabScroll::-webkit-scrollbar { display: none; }
+  .tabScroll { -ms-overflow-style: none; scrollbar-width: none; }
+  
+  .arrowLeft, .arrowRight {
+    background: #f0f0f0;
+    border: 1px solid #ccc;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 1.4rem;
+    user-select: none;
+    z-index: 10;
+  }
+  
+  .arrowLeft { border-radius: 6px 0 0 6px; }
+  .arrowRight { border-radius: 0 6px 6px 0; }
+  
+  .arrowLeft:hover, .arrowRight:hover { background: #e0e0e0; }
+  
+  .addBtn {
+    padding: 8px 14px;
+    background: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 10px 10px 0 0;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1.2em;
+    margin-left: 4px;
+  }
+  
+  .addBtn:hover { background: #e6e6e6; }
+  
+  .content {
+    height: 220px;
+    background: #fff;
+  }
+  
+  .editable {
+    width: 100%;
+    height: 100%;
+    padding: 12px;
+    border: none;
+    background: #f9f9f9;
+    font-size: 13px;
+    line-height: 1.5;
+    outline: none;
+    white-space: pre;
+    overflow-wrap: normal;
+    overflow-x: auto;
+  }
+  
+  .editable:focus {
+    background: #fff;
+  }
