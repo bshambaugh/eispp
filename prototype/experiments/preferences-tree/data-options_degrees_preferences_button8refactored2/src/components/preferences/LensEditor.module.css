@@ -1,0 +1,110 @@
+.tabbedBox {
+  width: 100%;
+  border: 1px solid #ccc;
+  font-family: monospace;
+  border-radius: 0;
+  overflow: hidden;
+}
+
+.tabsWrapper {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #ccc;
+  position: relative;
+}
+
+.tabsScroll {
+  flex: 1;
+  display: flex;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  gap: 2px;
+  padding: 0 4px;
+}
+
+.tabsScroll::-webkit-scrollbar {
+  display: none;
+}
+.tabsScroll {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.addTab {
+  padding: 10px 15px;
+  background: #f0f0f0;
+  border: 1px solid #ccc;
+  border-radius: 10px 10px 0 0;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1.1em;
+  flex-shrink: 0;
+  margin-left: 2px;
+}
+
+.addTab:hover {
+  background: #e6e6e6;
+}
+
+.scrollArrow {
+  background: #f0f0f0;
+  border: 1px solid #ccc;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 1.2rem;
+  user-select: none;
+  z-index: 10;
+}
+
+.scrollArrow:hover {
+  background: #e6e6e6;
+}
+
+.scrollArrowLeft {
+  border-radius: 6px 0 0 6px;
+}
+
+.scrollArrowRight {
+  border-radius: 0 6px 6px 0;
+}
+
+.tabContent {
+  width: 100%;
+  border-top: none;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  height: 200px;
+  min-height: 80px;
+  max-height: 60vh;
+}
+
+.tabContentEditable {
+  min-height: 0;
+  width: 100%;
+  flex: 1 1 auto;
+  border: 1px solid #999;
+  background-color: #f9f9f9;
+  padding: 8px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+  font-size: 13px;
+  resize: none;
+  line-height: 1.4;
+  outline: none;
+  box-sizing: border-box;
+  min-height: 80px;
+  white-space: pre;
+  tab-size: 2;
+}
+
+.tabContentEditable::selection {
+  background: rgba(0, 120, 215, 0.3);
+}

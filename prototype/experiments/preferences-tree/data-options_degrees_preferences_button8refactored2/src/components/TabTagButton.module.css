@@ -1,0 +1,46 @@
+.parentButton {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  background-color: #f0f0f0;
+  padding: 5px 15px 5px 10px;
+  border: 1px solid #ccc;
+  border-radius: 10px 10px 0 0;
+  font-size: 14px;
+  cursor: pointer;
+  position: relative;
+  transition: background-color 0.2s;
+}
+
+.parentButton.active {
+  background: #fff;
+  border-bottom: 2px solid #000;
+  padding-bottom: 3px;
+}
+
+.parentButton:hover:not(.active) {
+  background-color: #e6e6e6;
+}
+
+.text {
+  margin-right: 10px;
+  color: #2c3e50;
+}
+
+.closeContainer {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  font-size: 12px;
+  color: #000;
+  background: transparent;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.closeContainer:hover {
+  background-color: #a9a9a9;
+}

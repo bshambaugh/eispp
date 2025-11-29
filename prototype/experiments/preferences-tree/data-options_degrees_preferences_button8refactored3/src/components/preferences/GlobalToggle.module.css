@@ -1,0 +1,15 @@
+.container {
+    margin: 1.5rem 0;
+  }
+  
+  .label {
+    font-size: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .checkbox {
+    margin-right: 8px;
+  }
