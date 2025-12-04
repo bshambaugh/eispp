@@ -1,0 +1,49 @@
+/* CollapsibleSection.module.css */
+.panel {
+    max-width: 900px;
+    margin: 1.5rem auto;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    overflow: hidden;
+    font-family: system-ui, sans-serif;
+  }
+  
+  .header {
+    padding: 1.2rem 1.5rem;
+    background: #f8f9fa;
+    font-weight: 500;
+    font-size: 1.05rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    user-select: none;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .header:hover {
+    background: #f1f3f5;
+  }
+  
+  .toggleBtn {
+    background: none;
+    border: none;
+    font-size: 1.2em;
+    cursor: pointer;
+    padding: 0 1rem;
+    color: #000000;
+  }
+  
+  .content {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .footer {
+    padding: 1rem 1.5rem;
+    border-top: 1px solid #eee;
+    background: #fafafa;
+  }

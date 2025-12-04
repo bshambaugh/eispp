@@ -1,0 +1,8 @@
+.container { padding: 1rem 0; }
+.row { display: flex; align-items: center; gap: 16px; padding: 12px; margin-bottom: 12px; border-radius: 12px; }
+.row:hover { background: #f5f7fa; }
+.options { display: flex; flex-direction: column; gap: 10px; flex: 1; }
+.radio { display: flex; align-items: center; gap: 12px; font-size: 15px; }
+.fullLabel { display: flex; align-items: center; gap: 12px; cursor: pointer; font-size: 15px; width: 100%; }
+.layout { margin-left: 2rem; display: inline-flex; align-items: center; gap: 10px; }
+.layout select { padding: 6px 12px; border: 1px solid #ccc; border-radius: 8px; }
